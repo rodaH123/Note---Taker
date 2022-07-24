@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const { v4: uuidv4 } = require('uuid');
 
 const fs = require('fs');
 
@@ -21,7 +20,7 @@ app.post('/api/notes', (req, res) => {
     let newNote = {
         title: req.body.title,
         text: req.body.text,
-        id: uuidv4(),
+        id: 
     }
     let parseFs = JSON.parse(fs.readFileSync('db/db.json'))
     parseFs.push(newNote);
